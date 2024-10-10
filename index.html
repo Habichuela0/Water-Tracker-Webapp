@@ -1,51 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/assets/style.css"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drink up!</title>
+    <title>Hydro Hype</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-    <header> 
-        <div>
-    <h1> HydroHype </h1>
-    </div>
-    <div class="header">
+    <header>
+        <h1>Hydro Hype</h1>
         <nav>
-        <ul>
-            <li>
-            <a href=""> Tracker</a>
-            </li>
-            <li> 
-            <a href=""> Calculator</a>
-            </li>
-            <li> 
-            <a href=""> Blog</a> 
-            </li>
-            <li>
-                <a href=""> Tips n Tricks</a>
-                </li>
-        </ul>
+            <ul>
+                <li><a href="#item1">Item 1</a></li>
+                <li><a href="#item2">Item 2</a></li>
+                <li><a href="#item3">Item 3</a></li>
+                <li><a href="#item4">Item 4</a></li>
+            </ul>
         </nav>
-        <div class="hero-banner">
-            <h2> Drink Up!</h2>
+    </header>
+
+    <section class="hero">
+        <div class="form-container">
+            <h2>Hydration Station</h2>
+            <h3>Are you well hydrated?</h3>
+            <p>Based on your input this is the water intake we would recommend</p>
         </div>
-        
-<!--set up aside with Calculator -->
+        <div class="hero-text">
+            <h2>Stay Hydrated, Stay Hyped!</h2>
+            <p>Insert short description or mission statement here</p>
+        </div>
+    </section>
+<!-- Tracker below -->
+<section class="tracker">
+    <h2>Dive Into Your Daily Hydration</h2>
+    <p>Insert short description on tracking the water you consume.</p>
+    <div class="water-bottle-placeholder">
+        <img src="assets/images/water-bottle-icon.png" alt="Water Bottle">
+    </div>
+</section>
+<!-- Info-->
+    <section class="info">
+        <div class="container">
+            <h2>Get in the H20 Know</h2>
+            <div class="info-container">
+                <div class="info-tile">
+                    <h3>Info 1</h3>
+                    <p>Brief description of info.</p>
+                </div>
+                <div class="info-tile">
+                    <h3>Info 2</h3>
+                    <p>Brief description of info.</p>
+                </div>
+                <div class="info-tile">
+                    <h3>Info 3</h3>
+                    <p>Brief description of info.</p>
+                </div>
+                <div class="info-tile">
+                    <h3>Info 4</h3>
+                    <p>Brief description of info.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Article/Resource content below -->
+    <section class="hydration-hub">
+        <h2>Hydration Hub</h2>
+        <div class="article">
+            <a href="#">Read me 1</a>
+            <a href="#">Read me 2</a>
+            <a href="#">Read me 3</a>
+        </div>
+    </section>
+<!-- FAQ content below -->
+    <section class="faq"></section>
+        <h2 class="faq-header">Water Queries</h2>
+        <div class="faq-grid">
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #87a6b4;">
+                    <h3>Question 1?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 1.</p>
+                </div>
+            </div>
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #9da3bc;">
+                    <h3>Question 2?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 2.</p>
+                </div>
+            </div>
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #2e99ac;">
+                    <h3>Question 3?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 3.</p>
+                </div>
+            </div>
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #3cb4c4;">
+                    <h3>Question 4?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 4.</p>
+                </div>
+            </div>
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #adbcbc;">
+                    <h3>Question 5?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 5.</p>
+                </div>
+            </div>
+            <div class="faq-tile" onclick="toggleCard(this)">
+                <div class="faq-front" style="background-color: #87a6b4;">
+                    <h3>Question 6?</h3>
+                </div>
+                <div class="faq-back" style="background-color: #004d66;">
+                    <p>Answer 6.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Connect with us content below -->
+    <section class="about">
+        <h2>Stay Hydrated, Stay Hyped, Stay Connected!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
 
-<!-- set up tracker -->
+    <footer>
+        <div>
+            <p>Your email is looking a little dry, hydrate on the hype.</p>
+            <form>
+                <input type="email" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
 
-<!-- to do add FAQs-->    
+<script src="script.js"></script>
 
-<!-- to do add blog section-->  
-
-<!-- to do add subscribe section-->  
-
-    <script src="script.js"></script>
 </body>
-
-<!-- to do add footer-->  
-
 </html>
