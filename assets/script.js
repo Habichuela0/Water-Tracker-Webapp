@@ -1,10 +1,8 @@
-// FAQ card flip functionality
-function toggleCard(card) {
-    const front = card.querySelector('.faq-front');
-    const back = card.querySelector('.faq-back');
-    const isFlipped = front.style.transform === 'rotateY(180deg)';
-
-    // Flip the card
-    front.style.transform = isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)';
-    back.style.transform = isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
-}
+//FAQ
+const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+       for (const item of faqItems) {
+           const onClick = () => {
+           item.classList.toggle('active')
+       }
+       item.addEventListener('click', onClick)
+       }
