@@ -10,6 +10,7 @@
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Fugaz+One&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap');
 
 /* Global Styles */
 body {
@@ -22,16 +23,17 @@ body {
 header {
   background-color: #d8e2ed;
   color: var(--primary-bg);
-  padding: 10px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* Logo */
 .logo {
 	position: relative;
-  height: 50px;
-  margin-top: -15px;
+  height: 70px;
+  margin-top: -35px;
   display: block;
   font-family: "Chewy", sans-serif;
 }
@@ -89,25 +91,43 @@ header {
 nav ul {
   list-style-type: none;
   padding: 0;
+margin-top: 15px;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
+  margin: 5px;
+  padding: 15px;
+  background-color: rgba(167,228,221,0.7);
+  border-radius: 20px;
+  border: 2px solid #3173d7;
+}
+
+nav ul li a {
+font-family: 'Quicksand','Suse', 'Poppins', Arial, sans-serif;
+font-size: 18px;
+text-decoration: none;
+color:#0091ff;
 }
 
 /* Hero Section */
-.hero {
-  background-image: url(''); /* Add hero image */
-  background-size: cover;
-  padding: 50px;
-  color: var(--header-color);
+.hero-banner {
+  background: url("./images/Oregon-Sparks-Lake-4048.jpg") no-repeat center center/cover;
+  color: white;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
-.hero-text {
-  width: 50%;
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  padding: 2rem;
+  border-radius: 10px;
+}
+.mission-statement {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Form Container */
