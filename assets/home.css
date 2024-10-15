@@ -1,0 +1,393 @@
+:root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #a6e4dd;
+    --primaryLight: #a6e4dd;
+    --secondary: #7270dd;
+    --secondaryLight: #7270dd;
+    --headerColor: #f6f5f5;
+    --bodyTextColor: #d7d4dc;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1em;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Fugaz+One&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chewy', Arial, sans-serif;
+  }
+
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+
+ /* Header */
+ header {
+    color: var(--primary-bg);
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo {
+    position: relative;
+    height: 70px;
+    margin-top: -35px;
+    display: block;
+    font-family: "Chewy", sans-serif;
+  }
+  
+  .logo #text {
+    color: #fff;
+    font-size: 4em;
+    position: absolute;
+    text-align: left;
+  }
+  
+  .logo #text:nth-child(2) {
+      color: rgba(167,228,221,0.7);
+      -webkit-text-stroke: 2px #3173d7;
+  }
+  
+  .logo #text:nth-child(1) {
+      color: #6f9cdc;
+      animation: animate 3s ease-in-out infinite;
+  }
+  
+  @keyframes animate {
+      0%,
+      100% {
+          clip-path: polygon(
+              0% 45%,
+              16% 44%,
+              33% 50%,
+              54% 60%,
+              70% 61%,
+              84% 59%,
+              100% 52%,
+              100% 100%,
+              0% 100%
+          );
+      }
+  
+      50% {
+          clip-path: polygon(
+              0% 60%,
+              15% 65%,
+              34% 66%,
+              51% 62%,
+              67% 50%,
+              84% 45%,
+              100% 46%,
+              100% 100%,
+              0% 100%
+          );
+      }
+}
+
+/* Background */
+.picture {
+    position: fixed; /* Positioning the image absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    z-index: -1; /* Behind other content */
+}
+.topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    -webkit-text-stroke: 0.5px rgb(13, 12, 12);
+    position: relative;
+}
+
+.text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+
+/*-- -------------------------- -->
+<---          Form           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #form {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+    }
+    #form .container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: 36.5rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        /* 48px - 80px */
+        gap: clamp(3rem, 6vw, 5rem);
+        position: relative;
+    }
+    #form .content {
+        /* set text align to left if content needs to be left aligned */
+        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #form .title {
+        max-width: 23ch;
+        margin: 0 0 1.75rem 0;
+    }
+    #form .waterForm {
+        width: 100%;
+        max-width: 40.625rem;
+        /* 32px - 48px top and bottom */
+        /* 16px - 60px left and right */
+        padding: clamp(2rem, 5.18vw, 3rem) clamp(1rem, 5vw, 3.75rem);
+        /* prevents flexbox from affecting height and width */
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        /* prevents flexbox from squishing it */
+        flex: none;
+        gap: 0.75rem;
+    }
+    #form .waterForm .title {
+        /* 16px - 28px */
+        margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
+    }
+    #form .label {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        width: 100%;
+        color: var(--headerColor);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .height-inputs {
+        display: flex; /* Use flexbox to arrange items in a row */
+        gap: 1rem; /* Adjust the gap size as needed */
+        align-items: center; /* Center items vertically if needed */
+        min-height: 60px; /* Set a minimum height for the container */
+        width: 90%;
+    }
+    
+    #form .input {
+        font-size: 1rem;
+        width: 100%;
+        height: 3.5rem;
+        padding: 0;
+        padding-left: 1.5rem;
+        color: black;
+        background-color: #f6f2f2(0, 0, 0, 0.5);
+        border: none;
+        /* prevents padding from adding to height and width */
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+    #form .input::placeholder {
+        color: #0e0e0e;
+    }
+
+    #form .button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 30px;
+        color: #1a1a1a;
+        border: none;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        transition: color 0.3s;
+    }
+    #form .button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+    #form .button-solid:hover {
+        color: #fff;
+    }
+    #form .button-solid:hover:before {
+        width: 100%;
+    }
+    #form .submit {
+        width: 100%;
+        min-width: 17.6875rem;
+    }
+    #form .submit:hover {
+        cursor: pointer;
+    }
+    
+    #form .button {
+        font-size: 1rem;
+        line-height: 1.2em;
+        text-align: left;
+        font-weight: bold;
+        /* 16px - 24px */
+        padding: clamp(1rem, 2vw, 1.5rem);
+        padding-left: 0;
+        border: none;
+        background: transparent;
+        color: var(--headerColor);
+        display: block;
+        width: 100%;
+        position: relative;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+    #form .button:hover {
+        cursor: pointer;
+    }
+    #form .button:before {
+        /* left line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 45%;
+        right: 1.5rem;
+        transform: rotate(45deg);
+        /* animate the transform from the left side of the x axis, and the center of the y */
+        transform-origin: left center;
+        transition: transform 0.5s;
+    }
+    #form .button:after {
+        /* right line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 45%;
+        right: 1.3125rem;
+        transform: rotate(-45deg);
+        /* animate the transform from the right side of the x axis, and the center of the y */
+        transform-origin: right center;
+        transition: transform 0.5s;
+    }
+    #form .button-text {
+        width: 80%;
+        display: block;
+    }
+    #form .item-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        width: 90%;
+        height: 0;
+        margin: 0;
+        /* 16px - 24px */
+        padding: 0 clamp(1rem, 2vw, 1.5rem);
+        opacity: 0;
+        color: var(--bodyTextColor);
+        /* clips the text so it doesn't show up */
+        overflow: hidden;
+        transition:
+            opacity 0.3s,
+            padding-bottom 0.3s;
+    }
+
+    .page-info h1 {
+        -webkit-text-stroke: 1.5px white;
+        font-size: 4.5rem; /* Font size */
+    }
+
+    .page-info p {
+        color: #ffffff; /* Text color */
+        font-size: 1.5rem; /* Font size */
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #form .container {
+        max-width: 80rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #form .waterForm  {
+        width: 45vw;
+    }
+    #form .submit {
+        width: auto;
+    }
+}

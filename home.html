@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroHype</title>
+    <link rel="stylesheet" href="assets/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fugaz+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <div class="logo">
+            <div id="text">HydroHype</div>
+            <div id="text">HydroHype</div>
+        </div>
+    </header>
+    <img class="picture" src="assets/images/WaterBubbles.jpg" alt="Background image with water bubbles">
+    <section id="form">
+        <div class="container">
+            <!--Form-->
+            <form class="waterForm" name="Contact Form" method="post">
+                <div class="content">
+                    <span class="topper">Learn More</span>
+                    <h2 class="title">Calculate Your Water Needs</h2>
+                </div>
+                <label class="label">
+                    Name
+                    <input class="input" required type="text" id="name" placeholder="Name">
+                </label>
+                <label class="label">
+                    Gender
+                    <select class="input" required id="gender" placeholder="Gender">
+                        <option value="" disabled selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                    </select>
+                </label>
+                <label class="label">
+                    Height
+                    <div class="height-inputs">
+                        <input class="input" required type="number" placeholder="Feet" min="0" max="8">
+                        <input class="input" required type="number" placeholder="Inches" min="0" max="11">
+                    </div>
+                </label>
+                <label class="label">
+                    Weight
+                    <input class="input" required type="number" placeholder="Weight (lbs)" min="0">
+                </label>
+                <label class="label">
+                    Activity Level
+                    <select class="input" required id="activity" placeholder="Activity">
+                        <option value="" disabled selected>Select your actvity level</option>
+                            <option value="Sedentary">Sedentary</option>
+                            <option value="Light">Light</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Vigorous">Vigorous</option>
+                    </select>
+                </label>
+                <button class="button-solid submit" type="submit">Submit</button>
+            </form>
+            <div class="page-info">
+                <h1>Drink up, High five, Live the HydroHype!</h1>
+                <p> At HydroHype, we believe that water is the key to a healthy lifestyle. Our platform is designed to help you track your water intake and stay hydrated throughout the day. By cultivating good hydration habits, you can achieve your wellness goals. So, water you waiting for?</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
