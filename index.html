@@ -4,100 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HydroHype</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fugaz+One&family=Lobster&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fugaz+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="home.html">
-            <div class="logo">
-                <div class="text">HydroHype</div>
-                <div class="text">HydroHype</div>
-            </div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#tracker">Tracker</a></li>
-                <li><a href="#blog-1">Blog</a></li>
-                <li><a href="#faq-h20">FAQ</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-<!-- ============================================ -->
-<!--                    Hero                      -->
-<!-- ============================================ -->
-<section class="hero-banner">
-    <div class="form-response">
-        <h2>NAME</h2>
-        <h4>Are you well hydrated?</h4>
-        <p>Based on your input this is the water intake we would recommend</p>
-    </div>
-    <div class="hero-content">
-      <h1>Stay Hydrated, Stay Hyped, Stay Connected</h1>
-    </div>
-</section>
-<!-- Tracker below -->
-<section id="tracker">
-    <h1>Water Tracker</h1>
-    <div class="tracker-container">
-        <div class="side-info">
-            <svg viewBox="0 0 512 512">
-                <path style="fill:#a5d7fe;" d="M443.873,5.28c-3.032-3.36-7.346-5.278-11.872-5.28h-352c-8.836-0.044-16.036,7.083-16.08,15.92
-                    c-0.003,0.561,0.024,1.122,0.08,1.68l48,480c0.825,8.206,7.752,14.441,16,14.4h256c8.248,0.041,15.175-6.194,16-14.4l48-480
-                    C448.458,13.091,446.954,8.603,443.873,5.28z"/>
-                <path style="fill:#2196F3;" d="M401.281,163.2L369.601,480h-227.2l-35.52-354.24c49.558-19.8,105.795-12.921,149.12,18.24
-                    C298.09,174.493,352.715,181.713,401.281,163.2z"/>
-                <path style="fill:#a5d7fe;" d="M384.001,512h-256c-8.248,0.041-15.175-6.194-16-14.4l-48-480C63.117,8.808,69.528,0.964,78.32,0.08
-                    c0.558-0.056,1.119-0.083,1.68-0.08h352c8.836-0.044,16.036,7.083,16.08,15.92c0.003,0.561-0.024,1.122-0.08,1.68l-48,480
-                    C399.176,505.807,392.248,512.042,384.001,512z M142.497,480h227.008l44.8-448H97.697L142.497,480z"/>
-                <path style="fill:#a5d7fe;" d="M340.897,188.8c-34.507,0.783-68.177-10.679-95.04-32.352c-48.832-40.16-114.048-23.712-148.576-10.336
-                    c-8.245,3.181-17.507-0.923-20.688-9.168s0.923-17.507,9.168-20.688l0,0c40.992-15.808,118.976-34.976,180.384,15.36
-                    c45.376,37.28,104.544,26.624,146.208,11.136c8.186-3.327,17.52,0.611,20.847,8.798s-0.611,17.52-8.798,20.847
-                    c-0.301,0.122-0.606,0.236-0.914,0.339C397.108,182.874,369.154,188.311,340.897,188.8z"/>
-            </svg>
-            <span class="current-cups">0/10</span>
-        </div>
-        <div>
-            <div class="percentage-container">
-                <span class="current-percentage">0%</span>
-                <div class="progress"></div>
-            </div>
-        </div>
-        <div class="side-info">
-            <svg viewBox="0 0 512 512">
-                <style type="text/css">
-                    .st0{fill:#2196F3;}
-                    .st1{fill:#35a6ff;}
-                </style>
-                <path class="st0" d="M256.2,0c-23.6,92.2-62.2,181.2-119.7,257.6c-55.9,61.4-44.9,167.8,20.5,219
-                    c27.6,22.8,63.8,35.4,99.2,35.4s71.7-12.6,99.2-35.4c65.4-51.2,75.6-157.5,20.5-219C318.4,181.2,279.8,92.2,256.2,0z"/>
-                <path class="st1" d="M257,19.7c-13.4,64.6-34.7,126.8-66.2,180.4c-30.7,42.5-25.2,115.8,11,151.2
-                    c15,15.8,35.4,24.4,55.1,24.4s40.2-8.7,55.1-24.4c36.2-35.4,41.7-108.7,11-151.2C291.6,147.3,269.6,84.3,257,19.7z"/>
-            </svg>
-            <span class="current-liters">0L/2.5L</span>
-        </div>
-        <div class="buttons">
-            <button class="remove" disabled>-</button>
-            <button class="add">+</button>
-        </div>
-    </div>
-</section>
-<!-- Interior Banner below -->
+<!-------Interior Banner------>
 <section class="interior-banner"></section>
-<!-- FAQ content below -->
+<!-------LOGO + NAV------>
+<header>
+    <a href="home.html">
+        <div class="logo">
+            <div class="text">HydroHype</div>
+            <div class="text">HydroHype</div>
+        </div>
+    </a>
+    <div class="nav-bar">
+        <button class="nav-btn">Tracker</button>
+        <button class="nav-btn">FAQ</button>
+        <button class="nav-btn">Blog</button>
+        <button class="nav-btn">Contact Us</button>
+    </div>
+</header>
+<!-------Hero Banner------>
+<section class="hero-banner">
+    <div class="hero-content">
+      <h1>Experience the Hype<br>Join the Hydro Wave!</h1>
+    </div>
+</section>
+<!-------Interior Banner------>
+<section class="interior-banner"></section>
+<!-------Results/Tracker------>
+<section>
+    <div class="main-content">
+        <h1>Your Hydration is Just a Tap Away</h1> 
+    </div>
+    <div class="blurb-container"></div>
+        <p>Ready to boost your hydration game? With our water tracker, you can easily log your daily water intake and crush your hydration goals. Let’s make every sip count.<br>💧Drink Up,  ✋High Five,  ✨Live the HydroHype!</p>
+    </div>
+</section>
+<section class="dashboard">
+    <section class="results-box">
+        <div class="results-container">
+            <div>
+                <h2 id="greeting"></h2>
+                <p>Your water consumption report is ready!</p>
+                <div id="results" class="results"></div>
+                <div id="water-intake" class="water-intake"></div> <!-- Water intake display -->
+            </div>
+        </div>
+    </section>
+    <section class="tracker-box">
+        <div class="tracker-container">
+            <div class="side-info">
+                <svg viewBox="0 0 512 512">
+                    <path style="fill:#a5d7fe;" d="M443.873,5.28c-3.032-3.36-7.346-5.278-11.872-5.28h-352c-8.836-0.044-16.036,7.083-16.08,15.92
+                        c-0.003,0.561,0.024,1.122,0.08,1.68l48,480c0.825,8.206,7.752,14.441,16,14.4h256c8.248,0.041,15.175-6.194,16-14.4l48-480
+                        C448.458,13.091,446.954,8.603,443.873,5.28z"/>
+                    <path style="fill:#2196F3;" d="M401.281,163.2L369.601,480h-227.2l-35.52-354.24c49.558-19.8,105.795-12.921,149.12,18.24
+                        C298.09,174.493,352.715,181.713,401.281,163.2z"/>
+                    <path style="fill:#a5d7fe;" d="M384.001,512h-256c-8.248,0.041-15.175-6.194-16-14.4l-48-480C63.117,8.808,69.528,0.964,78.32,0.08
+                        c0.558-0.056,1.119-0.083,1.68-0.08h352c8.836-0.044,16.036,7.083,16.08,15.92c0.003,0.561-0.024,1.122-0.08,1.68l-48,480
+                        C399.176,505.807,392.248,512.042,384.001,512z M142.497,480h227.008l44.8-448H97.697L142.497,480z"/>
+                    <path style="fill:#a5d7fe;" d="M340.897,188.8c-34.507,0.783-68.177-10.679-95.04-32.352c-48.832-40.16-114.048-23.712-148.576-10.336
+                        c-8.245,3.181-17.507-0.923-20.688-9.168s0.923-17.507,9.168-20.688l0,0c40.992-15.808,118.976-34.976,180.384,15.36
+                        c45.376,37.28,104.544,26.624,146.208,11.136c8.186-3.327,17.52,0.611,20.847,8.798s-0.611,17.52-8.798,20.847
+                        c-0.301,0.122-0.606,0.236-0.914,0.339C397.108,182.874,369.154,188.311,340.897,188.8z"/>
+                </svg>
+                <span class="current-cups">0/10</span>
+            </div>
+            <div>
+                <h1 class="tracker-header">Tracker</h1>
+                <div class="percentage-container">
+                    <span class="current-percentage">0%</span>
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="side-info">
+                <svg viewBox="0 0 512 512">
+                    <style type="text/css">
+                        .st0{fill:#2196F3;}
+                        .st1{fill:#35a6ff;}
+                    </style>
+                    <path class="st0" d="M256.2,0c-23.6,92.2-62.2,181.2-119.7,257.6c-55.9,61.4-44.9,167.8,20.5,219
+                        c27.6,22.8,63.8,35.4,99.2,35.4s71.7-12.6,99.2-35.4c65.4-51.2,75.6-157.5,20.5-219C318.4,181.2,279.8,92.2,256.2,0z"/>
+                    <path class="st1" d="M257,19.7c-13.4,64.6-34.7,126.8-66.2,180.4c-30.7,42.5-25.2,115.8,11,151.2
+                        c15,15.8,35.4,24.4,55.1,24.4s40.2-8.7,55.1-24.4c36.2-35.4,41.7-108.7,11-151.2C291.6,147.3,269.6,84.3,257,19.7z"/>
+                </svg>
+                <span class="current-liters">0L/2.5L</span>
+            </div>
+            <div class="tracker-buttons">
+                <button class="tracker-button remove" disabled>-</button>
+                <button class="tracker-button add">+</button>
+            </div>
+        </div>
+    </section>
+</section>
+<!-------Interior Banner------>
+<section class="interior-banner"></section>
+<!-------FAQ------>
 <section id="faq-h20">
     <div class="cs-container">
         <div class="cs-left">
                 <!--center biggest image-->
                 <picture class="cs-picture cs-picture1" aria-hidden="true">
-                    <source media="(max-width: 600px)" srcset="https://i.postimg.cc/KjXd0Cs7/Drinking-water-workout.avif">
-                    <source media="(min-width: 601px)" srcset="https://i.postimg.cc/KjXd0Cs7/Drinking-water-workout.avif">
-                    <img loading="lazy" decoding="async" src="https://i.postimg.cc/KjXd0Cs7/Drinking-water-workout.avif" alt="cleaning supplies" width="672" height="672">
+                    <source media="(max-width: 600px)" src="assets/images/ActivityDrinkWater.png">
+                    <source media="(min-width: 601px)" src="assets/images/ActivityDrinkWater.png">
+                    <img loading="lazy" decoding="async" src="assets/images/ActivityDrinkWater.png" alt="Drinking Water" width="672" height="672">
                 </picture>
                 <!--top smaller image-->
                 <picture class="cs-picture cs-picture2" aria-hidden="true">
@@ -109,7 +124,7 @@
                 <picture class="cs-picture cs-picture3" aria-hidden="true">
                     <source media="(max-width: 600px)" srcset="https://i.postimg.cc/sDsL1PF2/water.jpg">
                     <source media="(min-width: 601px)" srcset="https://i.postimg.cc/sDsL1PF2/water.jpg">
-                    <img loading="lazy" decoding="async" src="https://i.postimg.cc/sDsL1PF2/water.jpg" alt="flowing water" width="200" height="200">
+                    <img loading="lazy" decoding="async" src="https://i.postimg.cc/sDsL1PF2/water.jpg" alt="Flowing water" width="200" height="200">
                 </picture>
         </div>
         <div class="cs-content">
@@ -187,12 +202,12 @@
         </div>
     </div>
 </section>
-<!-- Interior Banner below -->
+<!-------Interior Banner------>
 <section class="interior-banner"></section>
-<!-- Article/Resource content below -->
+<!-------Resources------>
 <section id="blog-1">  
     <div class="blog-container">
-        <h2>Water Matters: Articles & Resources</h2>
+        <h1>Discover Hydration</h1>
     <div class="blog-content">
         <ul class="blog-card-group">
             <li class="blog-item">
@@ -293,23 +308,65 @@
         </ul>
     </div>
   </section>
-
-<!-- Interior Banner below -->
+<!-------Interior Banner------>
 <section class="interior-banner"></section>
-<!-- Contact Us below -->
+<!-------Footer------>
 <footer>
-    <div id="contact">
-        <h2>Stay Hydrated, Stay Hyped, Stay Connected!</h2>
-        <p>Your email is looking a little dry, hydrate on the hype.</p>
-        <form>
-            <input type="email" placeholder="Your email" required>
-        </form>
-     </div>
+    <footer id="cs-footer-274">
+      <div class="cs-container">
+        <!-- Logo Group -->
+        <div class="cs-logo-group">
+          <a aria-label="go back to home" class="cs-logo" href="">
+            <!-- Remove the light class if you don't need the dark logo -->
+          </a>
+          <div class="cs-social">
+            <a class="cs-social-link" aria-label="visit google profile" href="">
+              <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/google.svg" alt="google" width="11" height="11">
+            </a>
+            <a class="cs-social-link" aria-label="visit facebook profile" href="">
+              <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/Facebook.svg" alt="facebook" width="6" height="11">
+            </a>
+            <a class="cs-social-link" aria-label="visit instagram profile" href="">
+              <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Social/instagram.svg" alt="instagram" width="11" height="11">
+            </a>
+          </div>
+        </div>
+        <!-- Links -->
+        <ul class="cs-nav">
+          <li class="cs-nav-li">
+            <span class="cs-header">Contact</span>
+          </li>
+          <li class="cs-nav-li">
+            <a class="cs-nav-link" href="tel:123-456 7890">(123) 456 7890</a>
+          </li>
+          <li class="cs-nav-li">
+            <a class="cs-nav-link" href="mailto:info@codestitch.com">info@HydroHype.com</a>
+          </li>
+        </ul>
+        <ul class="cs-nav">
+          <li class="cs-nav-li">
+            <span class="cs-header">Address</span>
+          </li>
+          <li class="cs-nav-li">
+            <a class="cs-nav-link" href="">123 Avenue Street<br> Chapel Hill, NC 27514</a>
+          </li>
+        </ul>
+        <!-- Contact Info -->
+        <ul class="cs-nav">
+          <li class="cs-nav-li">
+            <span class="cs-header">Our hydration coaches</span>
+          </li>
+          <li class="cs-nav-li">
+            Celeste Hayes, Cherie Davis, Martin Rojo,
+          </li>
+          <li class="cs-nav-li">
+            ​Aspen Zachman, Andrea Silva
+          </li>
+        </ul>
+      </div>
+    </footer>
 </footer>
- 
- <script src="script.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
- 
- </body>
- </html>
- 
+<script src="assets/home.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>

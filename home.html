@@ -11,55 +11,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&family=SUSE&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-------Interior Banner------>
+<section class="interior-banner"></section>
+<!-------LOGO + NAV------>
     <header> 
         <div class="logo">
             <div id="text">HydroHype</div>
             <div id="text">HydroHype</div>
         </div>
     </header>
-    <img class="picture" src="assets/images/WaterBubbles.jpg" alt="Background image with water bubbles">
-    <section id="form">
+    <img class="picture" src="assets/images/WaterDrips.png" alt="Background image with water bubbles">
+<!-------Form------>
+    <section id="userForm">
         <div class="container">
-            <!--Form-->
-            <form class="waterForm" name="Contact Form" method="post">
+            <form class="form-box">
                 <div class="content">
                     <span class="topper">Learn More</span>
                     <h2 class="title">Calculate Your Water Needs</h2>
                 </div>
-                <label class="label">
-                    Name
-                    <input class="input" required type="text" id="name" placeholder="Name">
-                </label>
-                <label class="label">
-                    Gender
-                    <select class="input" required id="gender" placeholder="Gender">
-                        <option value="" disabled selected>Select your gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                    </select>
-                </label>
-                <label class="label">
-                    Height
-                    <div class="height-inputs">
-                        <input class="input" required type="number" placeholder="Feet" min="0" max="8">
-                        <input class="input" required type="number" placeholder="Inches" min="0" max="11">
-                    </div>
-                </label>
-                <label class="label">
-                    Weight
-                    <input class="input" required type="number" placeholder="Weight (lbs)" min="0">
-                </label>
-                <label class="label">
-                    Activity Level
-                    <select class="input" required id="activity" placeholder="Activity">
+                <label class="label">Name</label>
+                <input class="input" type="text" id="name" placeholder="Name">
+
+                <label class="label">Weight</label>
+                <input class="input" type="number" id="weight" placeholder="Weight (lbs)" min="0">
+    
+                <label class="label">Height</label>
+                <select class="input" id="heightFeet">
+                    <option value="" disabled selected>Feet</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                </select>
+                <select class="input" id="heightInches">
+                    <option value="" disabled selected>Inches</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                </select>
+        
+                <label class="label">Activity Level</label>
+                    <select class="input" id="activity" placeholder="Activity" required>
                         <option value="" disabled selected>Select your actvity level</option>
                             <option value="Sedentary">Sedentary</option>
-                            <option value="Light">Light</option>
-                            <option value="Moderate">Moderate</option>
-                            <option value="Vigorous">Vigorous</option>
+                            <option value="Light">Lightly Active</option>
+                            <option value="Moderate">Moderately Active</option>
+                            <option value="Vigorous">Very Active</option>
                     </select>
-                </label>
+                
                 <button class="button-solid submit" type="submit">Submit</button>
             </form>
             <div class="page-info">
@@ -68,5 +77,8 @@
             </div>
         </div>
     </section>
+<!-------Interior Banner------>
+<section class="interior-banner"></section>
+<script src="assets/home.js"></script>
 </body>
 </html>

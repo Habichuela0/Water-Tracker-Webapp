@@ -1,12 +1,11 @@
 :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #a6e4dd;
-    --primaryLight: #a6e4dd;
-    --secondary: #7270dd;
-    --secondaryLight: #7270dd;
-    --headerColor: #f6f5f5;
-    --bodyTextColor: #d7d4dc;
-    --bodyTextColorWhite: #fafbfc;
+    --primary-bg: #a6e4dd; /* Primary background color */
+    --secondary-bg: #7270dd; /* Light secondary background color */
+    --form-bg: #3173d7; /* Form background */
+    --dark-blue: #10334d; /* Dark blue for FAQ background */
+    --text-color: #d7d4dc; /* Main text color */
+    --header-color: #f6f5f5; /* Header text color */
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -29,11 +28,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Chewy', Arial, sans-serif;
-  }
+}
 
 *, *:before, *:after {
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
+}
+/* Interior Banner */
+.interior-banner {
+    background-color: #d8e2ed;
+    height: 15px;
+    width: 100%;
 }
 
  /* Header */
@@ -43,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.3em;
   }
   
   /* Logo */
@@ -56,18 +62,18 @@ h1, h2, h3, h4, h5, h6 {
   
   .logo #text {
     color: #fff;
-    font-size: 4em;
+    font-size: 3em;
     position: absolute;
     text-align: left;
   }
   
   .logo #text:nth-child(2) {
       color: rgba(167,228,221,0.7);
-      -webkit-text-stroke: 2px #3173d7;
+      -webkit-text-stroke: 2px #3c3c3c;
   }
   
   .logo #text:nth-child(1) {
-      color: #6f9cdc;
+      color: #336ab8;
       animation: animate 3s ease-in-out infinite;
   }
   
@@ -118,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: inherit;
     letter-spacing: .1em;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary-bg);
     margin-bottom: 0.25rem;
     display: block;
 }
@@ -130,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: inherit;
     max-width: 43.75rem;
     margin: 0 0 1rem 0;
-    color: var(--headerColor);
+    color: var(--header-color);
     -webkit-text-stroke: 0.5px rgb(13, 12, 12);
     position: relative;
 }
@@ -142,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     max-width: 40.625rem;
     margin: 0;
-    color: var(--bodyTextColor);
+    color: var(--text-color);
 }
 
 /*-- -------------------------- -->
@@ -151,12 +157,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #form {
+    #userForm {
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
     }
-    #form .container {
+    #userForm .container {
         width: 100%;
         /* changes to 1280px at desktop */
         max-width: 36.5rem;
@@ -169,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: clamp(3rem, 6vw, 5rem);
         position: relative;
     }
-    #form .content {
+    #userForm .content {
         /* set text align to left if content needs to be left aligned */
         white-space: nowrap;
         text-align: left;
@@ -180,11 +186,11 @@ h1, h2, h3, h4, h5, h6 {
         align-items: flex-start;
     }
 
-    #form .title {
+    #userForm .title {
         max-width: 23ch;
         margin: 0 0 1.75rem 0;
     }
-    #form .waterForm {
+    #userForm .form-box {
         width: 100%;
         max-width: 40.625rem;
         /* 32px - 48px top and bottom */
@@ -202,31 +208,23 @@ h1, h2, h3, h4, h5, h6 {
         flex: none;
         gap: 0.75rem;
     }
-    #form .waterForm .title {
+    #userForm .form-box .title {
         /* 16px - 28px */
         margin: 0 0 clamp(1rem, 3vw, 1.75rem) 0;
     }
-    #form .label {
+    #userForm .label {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         width: 100%;
-        color: var(--headerColor);
+        color: var(--header-color);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         gap: 0.25rem;
     }
-
-    .height-inputs {
-        display: flex; /* Use flexbox to arrange items in a row */
-        gap: 1rem; /* Adjust the gap size as needed */
-        align-items: center; /* Center items vertically if needed */
-        min-height: 60px; /* Set a minimum height for the container */
-        width: 90%;
-    }
     
-    #form .input {
+    #userForm .input {
         font-size: 1rem;
         width: 100%;
         height: 3.5rem;
@@ -239,11 +237,11 @@ h1, h2, h3, h4, h5, h6 {
         box-sizing: border-box;
         border-radius: 5px;
     }
-    #form .input::placeholder {
+    #userForm .input::placeholder {
         color: #0e0e0e;
     }
 
-    #form .button-solid {
+    #userForm .button-solid {
         font-size: 1rem;
         /* 46px - 56px */
         line-height: clamp(2.875em, 5.5vw, 3.5em);
@@ -255,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
         border: none;
         min-width: 9.375rem;
         padding: 0 1.5rem;
-        background-color: var(--primary);
+        background-color: var(--primary-bg);
         overflow: hidden;
         display: inline-block;
         position: relative;
@@ -264,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
         box-sizing: border-box;
         transition: color 0.3s;
     }
-    #form .button-solid:before {
+    #userForm .button-solid:before {
         content: "";
         position: absolute;
         height: 100%;
@@ -276,21 +274,21 @@ h1, h2, h3, h4, h5, h6 {
         z-index: -1;
         transition: width 0.3s;
     }
-    #form .button-solid:hover {
+    #userForm .button-solid:hover {
         color: #fff;
     }
-    #form .button-solid:hover:before {
+    #userForm .button-solid:hover:before {
         width: 100%;
     }
-    #form .submit {
+    #userForm .submit {
         width: 100%;
         min-width: 17.6875rem;
     }
-    #form .submit:hover {
+    #userForm .submit:hover {
         cursor: pointer;
     }
     
-    #form .button {
+    #userForm .button {
         font-size: 1rem;
         line-height: 1.2em;
         text-align: left;
@@ -300,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
         padding-left: 0;
         border: none;
         background: transparent;
-        color: var(--headerColor);
+        color: var(--header-color);
         display: block;
         width: 100%;
         position: relative;
@@ -308,15 +306,15 @@ h1, h2, h3, h4, h5, h6 {
             background-color 0.3s,
             color 0.3s;
     }
-    #form .button:hover {
+    #userForm .button:hover {
         cursor: pointer;
     }
-    #form .button:before {
+    #userForm .button:before {
         /* left line */
         content: "";
         width: 0.5rem;
         height: 0.125rem;
-        background-color: var(--headerColor);
+        background-color: var(--header-color);
         opacity: 1;
         border-radius: 50%;
         position: absolute;
@@ -328,12 +326,12 @@ h1, h2, h3, h4, h5, h6 {
         transform-origin: left center;
         transition: transform 0.5s;
     }
-    #form .button:after {
+    #userForm .button:after {
         /* right line */
         content: "";
         width: 0.5rem;
         height: 0.125rem;
-        background-color: var(--headerColor);
+        background-color: var(--header-color);
         opacity: 1;
         border-radius: 50%;
         position: absolute;
@@ -345,11 +343,11 @@ h1, h2, h3, h4, h5, h6 {
         transform-origin: right center;
         transition: transform 0.5s;
     }
-    #form .button-text {
+    #userForm .button-text {
         width: 80%;
         display: block;
     }
-    #form .item-p {
+    #userForm .item-p {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         line-height: 1.5em;
@@ -359,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
         /* 16px - 24px */
         padding: 0 clamp(1rem, 2vw, 1.5rem);
         opacity: 0;
-        color: var(--bodyTextColor);
+        color: var(--text-color);
         /* clips the text so it doesn't show up */
         overflow: hidden;
         transition:
@@ -368,26 +366,28 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .page-info h1 {
-        -webkit-text-stroke: 1.5px white;
-        font-size: 4.5rem; /* Font size */
+        font-size: 3.5rem; /* Font size */
+        font-family: 'Popins', sans-serif; /* Font family */
+        color: #a6e4dd;
+        -webkit-text-stroke: 2px #3c3c3c;
     }
 
     .page-info p {
-        color: #ffffff; /* Text color */
+        color: #3c3c3c; /* Text color */
         font-size: 1.5rem; /* Font size */
     }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #form .container {
+    #userForm .container {
         max-width: 80rem;
         flex-direction: row;
         justify-content: space-between;
     }
-    #form .waterForm  {
+    #userForm .waterForm  {
         width: 45vw;
     }
-    #form .submit {
+    #userForm .submit {
         width: auto;
     }
 }
