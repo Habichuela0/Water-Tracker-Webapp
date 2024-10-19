@@ -27,15 +27,7 @@
     body.dark-mode .cs-li {
       color: var(--bodyTextColorWhite);
     }
-
-    body.dark-mode header {
-        background-color: var(--dark);
-        color: var(--bodyTextColorWhite);
-        padding: 20px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    
 
     body.dark-mode nav ul li {
         display: inline;
@@ -106,69 +98,69 @@
     }
   }
   /*-- -------------------------- -->
-  <---      Dark Mode Toggle      -->
-  <--- -------------------------- -*/
-  /* Mobile */
-  @media only screen and (min-width: 0rem) {
-    body.dark-mode #dark-mode-toggle .cs-sun {
-      transform: translate(-50%, -50%);
-      opacity: 1;
-    }
-    body.dark-mode #dark-mode-toggle .cs-moon {
-      transform: translate(-50%, -150%);
-      opacity: 0;
-    }
-    #dark-mode-toggle {
-      display: block;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 3.75rem;
-      width: 3rem;
-      height: 3rem;
-      background: transparent;
-      border: none;
-      overflow: hidden;
-      padding: 0;
-    }
-    #dark-mode-toggle img,
-    #dark-mode-toggle svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 1.5625rem;
-      height: 1.5625rem;
-      pointer-events: none;
-    }
-    #dark-mode-toggle .cs-moon {
-      z-index: 2;
-      transition: transform 0.3s,
-                  opacity 0.3s,
-                  fill 0.3s;
-      fill: #000;
-    }
-    #dark-mode-toggle .cs-sun {
-      z-index: 1;
-      transform: translate(-50%, 100%);
-      opacity: 0;
-      transition: transform 0.3s,
-                  opacity 0.3s;
-    }
+<---      Dark Mode Toggle      -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #dark-mode-toggle .cs-sun {
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
-  /* Desktop */
-  @media only screen and (min-width: 64rem) {
-    #dark-mode-toggle {
-      position: absolute;
-      top: 25px;
-      right: -5px;
-      transform: none;
-      margin-left: 5px;
-      margin-bottom: 0rem;
-    }
-    #dark-mode-toggle .moon {
-      /* change to whatever you need */
-        fill: #fff;
-    }
+  body.dark-mode #dark-mode-toggle .cs-moon {
+    transform: translate(-50%, -150%);
+    opacity: 0;
   }
-                                  
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3.75rem;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+  }
+  #dark-mode-toggle img,
+  #dark-mode-toggle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5625rem;
+    height: 1.5625rem;
+    pointer-events: none;
+  }
+  #dark-mode-toggle .cs-moon {
+    z-index: 2;
+    transition: transform 0.3s,
+                opacity 0.3s,
+                fill 0.3s;
+    fill: #000;
+  }
+  #dark-mode-toggle .cs-sun {
+    z-index: 1;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: transform 0.3s,
+                opacity 0.3s;
+  }
+}
+/* Desktop */
+@media only screen and (min-width: 64rem) {
+  #dark-mode-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 1.875rem;
+    margin-bottom: 0rem;
+  }
+  #dark-mode-toggle .moon {
+    /* change to whatever you need */
+    /* fill: #fff; */
+  }
+}
+                                
