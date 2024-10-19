@@ -23,104 +23,154 @@ if (storedData) {
         }
     }
 
-    // Calculate and display water intake
-    const weightLbs = parseFloat(storedData.weight); // Use weight directly as it's in pounds
-    const waterIntakeOunces = weightLbs * 0.50; // Base ounces of water
-    const waterIntakeLiters = (waterIntakeOunces / 33.814).toFixed(2); // Convert ounces to liters
+    // Displays water intake
+    const weightLbs = parseFloat(storedData.weight); // Weight in Pounds
+    const waterIntakeOunces = weightLbs * 0.50; // Base ounces of water - calculate as 50% of users body weight
+    const waterIntakeLiters = (waterIntakeOunces / 33.814).toFixed(2); // Gives approx. liters
     
-    // Calculate extra water intake based on activity level
+    // Adds activity level to water intake
     let extraWaterOunces = 0;
     switch (storedData.activity) {
         case "Sedentary":
             extraWaterOunces = 0;
             break;
-        case "Lightly active":
+        case "Light":
             extraWaterOunces = 12; // Add 12 ounces for light activity
             break;
-        case "Moderately active":
+        case "Moderate":
             extraWaterOunces = 24; // Add 24 ounces for moderate activity
             break;
-        case "Very active":
+        case "Very Active":
             extraWaterOunces = 36; // Add 36 ounces for vigorous activity
             break;
     }
 
     // Total water intake calculation
-    const totalWaterOunces = waterIntakeOunces + extraWaterOunces;
-    const totalWaterLiters = (totalWaterOunces / 33.814).toFixed(2); // Convert total ounces to liters
+    const totalWaterOunces = Math.round (waterIntakeOunces + extraWaterOunces);
+    const totalWaterLiters = (totalWaterOunces / 33.814).toFixed(2); // Gives users approximate liters
     
     // Calculate number of 8oz cups
-    const cupsOfWater = Math.ceil(totalWaterOunces / 8); // Round up to the nearest cup
+    const cupsOfWater = Math.ceil(totalWaterOunces / 8); // Calculates the number cups of water needed
+
+    // Store recomendation in local storage
+    localStorage.setItem('recommendedWaterOunces', totalWaterOunces);
+    localStorage.setItem('recommendedCups', cupsOfWater);
+
 
     const waterIntakeDiv = document.getElementById('water-intake');
     waterIntakeDiv.innerHTML = `
-        <strong>Daily Water Intake Recommendation:</strong>
-        <p>${totalWaterOunces.toFixed(2)} oz (approx. ${totalWaterLiters} L)</p>
-        <p>This is approximately ${cupsOfWater} cups (8 oz each).</p>
-        <p>Based on your activity level, add an additional ${extraWaterOunces} oz of water.</p>
+        <p>Based on your activity level, we added ${extraWaterOunces} oz to your goal.</p>
+        <strong><p>Daily Goal:</p></strong>
+        <p>💧${totalWaterOunces.toFixed(0)} oz (approx. ${totalWaterLiters} L)</p>
+        <p>Strive for ≈ ${cupsOfWater} (8oz) cups of water to meet your goal.</p>
     `;
 } else {
-    const message = document.createElement('p');
+
+    // Hide the water intake div 
+    const waterIntakeDiv = document.getElementById('water-intake');
+    waterIntakeDiv.style.display = 'none';
+
+    // Hide the paragraph with the recommendation message
+    const recommendationMessage = document.querySelector(".recommendation-message"); // Adjust the selector if needed
+    if (recommendationMessage) {
+        recommendationMessage.style.display = 'none'; // Hide the paragraph
+    }
+
+    const message = document.createElement('h1');
     message.textContent = 'No user data found.';
     document.getElementById('results').appendChild(message);
+
+    // Back to Home Page
+    const backButton = document.createElement('button');
+    backButton.textContent = 'Resubmit Form';
+    backButton.classList.add('back-button');
+
+    // Event listener to navigate back to the home page
+    backButton.addEventListener('click', () => {
+    window.location.href = 'home.html'; 
+});
+
+    // Append the button to the results container
+    document.getElementById('results').appendChild(backButton);
 };
 
-//Tracker
-    // Button selectors
-    const addButton = document.querySelector(".add"),
-        removeButton = document.querySelector(".remove");
+// Tracker
+// Button selectors
+const addButton = document.querySelector(".add"),
+    removeButton = document.querySelector(".remove");
 
-    // Elements for update
-    const currentCupsEl = document.querySelector(".current-cups"),
-        currentLitersEl = document.querySelector(".current-liters"),
-        currentPercentageEl = document.querySelector(".current-percentage"),
-        progressArea = document.querySelector(".progress");
+// Tracker elements that update
+const currentCupsEl = document.querySelector(".current-cups"),
+    currentOuncesEl = document.querySelector(".current-ounces"),
+    currentPercentageEl = document.querySelector(".current-percentage"),
+    progressArea = document.querySelector(".progress");
 
-    const MAX_CUPS = 10,
-        MIN_CUPS = 0;
+// Constants for cups
+const MAX_CUPS = parseInt(localStorage.getItem('recommendedCups')) || 12,
+      MIN_CUPS = 0;
 
-    let cups = 0,
-        liters = 0,
-        percentage = 0;
+// Constants for ounces
+const MAX_OUNCES = parseFloat(localStorage.getItem('recommendedWaterOunces')) || 96, 
+      MIN_OUNCES = 0;
 
-    function addCup() {
-        if (cups < MAX_CUPS) {
-            cups++;
-            liters += 250;
-            percentage = (cups / MAX_CUPS) * 100;
-            
-            updateLayout();  // Update layout after changing cups
-        }
+// Variables in tracker
+let cups = 0,
+    ounces = 0,
+    percentage = 0;
 
-        // Disable buttons based on cups
-        addButton.disabled = cups === MAX_CUPS;
-        removeButton.disabled = cups === MIN_CUPS;
+// Functions for adding and removing cups
+function addCup() {
+    if (cups < MAX_CUPS && ounces < MAX_OUNCES) {
+        cups++;
+        ounces += 8; // Based on 8 ounce standard
+
+    if (ounces > MAX_OUNCES) {
+        ounces = MAX_OUNCES; // Limit to max ounces
+    }
+        percentage = (ounces / MAX_OUNCES) * 100;  
+        updateLayout();
     }
 
-    function removeCup() {
-        if (cups > MIN_CUPS) {
-            cups--;
-            liters -= 250;
-            percentage = (cups / MAX_CUPS) * 100;
+    // Disable buttons based on cups
+    addButton.disabled = cups === MAX_CUPS || ounces >= MAX_OUNCES;
+    removeButton.disabled = cups === MIN_CUPS;
+}
 
-            updateLayout();  // Update layout after changing cups
-        }
-
-        // Disable buttons based on cups
-        addButton.disabled = cups === MAX_CUPS;
-        removeButton.disabled = cups === MIN_CUPS;
+function removeCup() {
+    if (cups > MIN_CUPS && ounces > MIN_OUNCES) {
+        cups--;
+        ounces -= 8; // Based on 8 ounce standard
+    if (ounces < MIN_OUNCES) {
+        ounces = MIN_OUNCES; // Limit to min ounces
+    }
+        percentage = (ounces / MAX_OUNCES) * 100;
+        updateLayout();
     }
 
-    function updateLayout() {
-        currentCupsEl.textContent = `${cups}/10`;
-        currentLitersEl.textContent = `${liters / 1000}l/2.5l`;
-        currentPercentageEl.textContent = `${percentage}%`;
-        progressArea.style.height = `${percentage}%`;
-    }
+    // Disable buttons based on cups
+    addButton.disabled = cups === MAX_CUPS || ounces >= MAX_OUNCES;
+    removeButton.disabled = cups === MIN_CUPS || ounces === MIN_OUNCES;
+}
 
-    // Event listeners
-    addButton.addEventListener("click", addCup);
-    removeButton.addEventListener("click", removeCup);
+// Update the layout to reflect current values
+function updateLayout() {
+    currentCupsEl.textContent = `${cups}/${MAX_CUPS} cups`; // Cups display
+    currentOuncesEl.textContent = `${ounces}/${MAX_OUNCES.toFixed(0)} oz`; // Ounce display
+    currentPercentageEl.textContent = `${percentage.toFixed(0)}%`; // Percentage display
+    progressArea.style.height = `${percentage}%`; // Progress bar display
+
+    // Save current cups and ounces to local storage
+    localStorage.setItem('currentCups', cups);
+    localStorage.setItem('currentOunces', ounces);
+
+}
+
+// Initialize layout with initial values
+updateLayout();
+
+// Event listeners
+addButton.addEventListener("click", addCup);
+removeButton.addEventListener("click", removeCup);
 
 //FAQ
 const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));

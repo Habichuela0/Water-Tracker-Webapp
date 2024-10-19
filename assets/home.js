@@ -1,5 +1,8 @@
 //Home Form
-document.getElementById('userForm').onsubmit = function(event) {
+const form = document.querySelector('#userForm .form-box');
+
+if (form) { 
+    form.onsubmit = function(event) {
     event.preventDefault();
 
     //Collect the from data
@@ -25,3 +28,4 @@ document.getElementById('userForm').onsubmit = function(event) {
     // Redirect to results page
     window.location.href = 'index.html';
 };
+}
