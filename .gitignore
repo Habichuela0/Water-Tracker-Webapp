@@ -128,3 +128,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+cherieindex.html
+cheriejustignore.js
+cheriestyle.css
+Cheriedark.css
+
