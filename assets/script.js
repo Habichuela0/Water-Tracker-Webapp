@@ -172,6 +172,69 @@ updateLayout();
 addButton.addEventListener("click", addCup);
 removeButton.addEventListener("click", removeCup);
 
+// Modal Elements
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Get Hyped!</h1>
+        <p>🎉 Congratulations, You've reached your water intake goal!</p>
+        <button id="resetBtn">Reset Tracker</button>
+    </div>
+`;
+document.body.appendChild(modal);
+
+const closeModal = modal.querySelector('.close');
+const resetBtn = modal.querySelector('#resetBtn');
+
+// Check if the tracker is full
+function checkTrackerGoal() {
+    if (percentage >= 100) {
+        openModal();
+    }
+}
+
+// Function to open the modal
+function openModal() {
+    modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModalFunc() {
+    modal.style.display = 'none';
+}
+
+// Reset Tracker Function
+function resetTracker() {
+    cups = 0;
+    ounces = 0;
+    percentage = 0;
+    localStorage.removeItem('currentCups');
+    localStorage.removeItem('currentOunces');
+    updateLayout();
+    closeModalFunc();
+
+    removeButton.disabled = true;
+    addButton.disabled = false;
+}
+
+// Update layout function (modified to check tracker goal)
+function updateLayout() {
+    currentCupsEl.textContent = `${cups}/${MAX_CUPS} cups`;
+    currentOuncesEl.textContent = `${ounces}/${MAX_OUNCES.toFixed(0)} oz`;
+    currentPercentageEl.textContent = `${percentage.toFixed(0)}%`;
+    progressArea.style.height = `${percentage}%`;
+    localStorage.setItem('currentCups', cups);
+    localStorage.setItem('currentOunces', ounces);
+    checkTrackerGoal(); // Check goal after updating layout
+}
+
+// Event listeners for modal close and reset
+closeModal.addEventListener('click', closeModalFunc);
+resetBtn.addEventListener('click', resetTracker);
+
+
 //FAQ
 const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
 for (const item of faqItems) {
