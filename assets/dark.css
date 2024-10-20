@@ -27,6 +27,10 @@
     body.dark-mode .cs-li {
       color: var(--bodyTextColorWhite);
     }
+
+    body.dark-mode .interior-banner {
+      background-color: #061520;
+    }
     
 
     body.dark-mode nav ul li {
@@ -53,9 +57,30 @@
         color: var(--bodyTextColorWhite)
     }
 
+      body.dark-mode .dashboard .results-box .results-container {
+        color: #000;
+      }
+
+      body.dark-mode .results-container h2, body.dark-mode .results-container p {
+        color:#000!important;
+      }
+
+      body.dark-mode .results, body.dark-mode .water-intake {
+        color: #000;
+      }
+
     body.dark-mode #faq-h20 {
         padding: var(--sectionPadding);
         background: var(--accent);
+    }
+
+    body.dark-mode #faq-h20 .cs-content .cs-topper .cs-title {
+      color: #0042a5;
+  }
+
+    body.dark-mode #faq-h20 .cs-picture {
+      border-radius: 50%;
+      border: clamp(6px, 1.2vw, 12px) solid #082032;
     }
 
     body.dark-mode #blog-1 .blog-item-text {
@@ -68,6 +93,7 @@
         flex-grow: 1;
         transition: background-color 0.3s;
     }
+
     body.dark-mode #blog-1 .h3 {
         font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
         line-height: 1.2em;

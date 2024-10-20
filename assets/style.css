@@ -182,7 +182,8 @@ header {
 }
 
 .results-box {
-    background-color: white;
+    background-color: transparent;
+    color: #000;
 }
 
 .results-container {
@@ -194,6 +195,7 @@ header {
     background: #a6e4dd;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    color: #000;
 }
 .results {
     display: flex;
@@ -203,6 +205,7 @@ header {
 
 .results h1{
   font-size: 2em;
+  color:#000;
 }
 
 #greeting {
@@ -210,6 +213,7 @@ header {
     font-size: 2em;
     font-family: 'Poppins', Arial, sans-serif;
     margin-bottom: 5px;
+    color: #000;
 
 }
 
@@ -246,7 +250,7 @@ header {
 }
 
 .tracker-box {
-    background-color: white;
+    background-color: transparent;
 }
 
 .tracker-header {
@@ -599,6 +603,7 @@ header {
         text-align: left;
         width: 80%;
         margin-left: 0;
+        font-family: 'Poppins', sans-serif;
     }
 } 
 /* Resources */
@@ -757,8 +762,9 @@ header {
   }
 /* Footer */
 footer {
-    margin-top: 40px;
+    padding-top: 40px;
     padding-bottom: 100px;
+    background-color: #f7f7f7;
     /* Mobile - 360px */
     @media only screen and (min-width: 0rem) {
       #cs-footer-274 {
