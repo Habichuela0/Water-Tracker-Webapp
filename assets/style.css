@@ -317,6 +317,7 @@ color: black;
 }
 
 #greeting {
+    text-align: center;
     font-size: 2em;
     font-family: 'Poppins', Arial, sans-serif;
     color: black;
