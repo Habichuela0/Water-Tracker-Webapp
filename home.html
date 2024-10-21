@@ -30,13 +30,13 @@
                     <h2 class="title">Calculate Your Water Needs</h2>
                 </div>
                 <label class="label">Name</label>
-                <input class="input" type="text" id="name" placeholder="Name">
+                <input class="input" type="text" id="name" placeholder="Name" required>
 
                 <label class="label">Weight</label>
-                <input class="input" type="number" id="weight" placeholder="Weight (lbs)" min="0">
+                <input class="input" type="number" id="weight" placeholder="Weight (lbs)" min="0" required>
     
                 <label class="label">Height</label>
-                <select class="input" id="heightFeet">
+                <select class="input" id="heightFeet" required>
                     <option value="" disabled selected>Feet</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
@@ -44,7 +44,7 @@
                         <option value="7">7</option>
                         <option value="8">8</option>
                 </select>
-                <select class="input" id="heightInches">
+                <select class="input" id="heightInches" required>
                     <option value="" disabled selected>Inches</option>
                     <option value="0">0</option>
                     <option value="1">1</option>

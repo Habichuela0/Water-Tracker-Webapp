@@ -182,7 +182,7 @@ header {
 
 /* Hero Banner */
 .hero-banner {
-    background: url("/assets/images/Oregon-Sparks-Lake-4048.jpg") no-repeat center center/cover;
+    background: url("/Water-Tracker-Webapp/assets/images/Oregon-Sparks-Lake-4048.jpg") no-repeat center center/cover;
     color: white;
     height: 400px;
     display: flex;
